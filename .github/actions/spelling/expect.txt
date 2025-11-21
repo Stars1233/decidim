@@ -457,6 +457,7 @@ libicu
 libpq
 libreadline
 libreoffice
+libretranslate
 libyaml
 Liddel
 lighthouserc
