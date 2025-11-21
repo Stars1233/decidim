@@ -37,6 +37,7 @@ bin/rails decidim:upgrade
 bin/rails db:migrate
 # skip this command if you have run it before:
 bin/rails decidim:upgrade:clean:remove_private_exports_attachments
+echo "/public/sw.js*" >> .gitignore
 bin/rails decidim:upgrade:remove_deleted_users_left_data
 bin/rails decidim:upgrade:fix_deleted_private_follows
 bin/rails data:migrate
@@ -92,7 +93,17 @@ At the moment we are adding this gem so we can start doing data migrations for f
 
 You can read more about this change on PR [#15501](https://github.com/decidim/decidim/pull/15501).
 
-### 2.4. [[TITLE OF THE ACTION]]
+#### 2.4. Fix gitignore for ServiceWorker related files
+
+We detected a bug where some dynamic files are not added to the gitignore, so they could be committed to the repository. For fixing it, you need to add them to your gitignore file:
+
+```bash
+echo "/public/sw.js*" >> .gitignore
+```
+
+You can read more about this change on PR [#15601](https://github.com/decidim/decidim/pull/15601).
+
+### 2.5. [[TITLE OF THE ACTION]]
 
 You can read more about this change on PR [#XXXX](https://github.com/decidim/decidim/pull/XXXX).
 
