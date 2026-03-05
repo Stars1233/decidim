@@ -73,7 +73,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 8.0.0", ">= 8.0.4"
   s.add_dependency "rails-i18n", "~> 8.0.0", ">= 8.0.2"
   s.add_dependency "ransack", "~> 4.2.0"
-  s.add_dependency "redis", "~> 4.1"
+  s.add_dependency "redis", ">= 4.1", "< 6.0"
   s.add_dependency "request_store", "~> 1.7.0"
   s.add_dependency "rqrcode", "~> 2.2.0"
   s.add_dependency "ruby-vips", "~> 2.2"
