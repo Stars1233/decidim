@@ -1,17 +1,17 @@
-= Withdraw Proposal
+= Delete Milestone
 
-To use the API to withdraw any proposal that the user has created, you will need to use the following API request.
+== Sample request
+
+The `DeleteMilestone` mutation allows authenticated administrators to delete milestone within a result in a Decidim accountability component.
 
 [source,graphql]
 ----
-mutation withdrawProposal($componentId: ID!, $proposalId: ID!){
-  component(id: $componentId) {
-    ... on ProposalsMutation {
-      proposal(id: $proposalId) {
-        withdraw(input: {}) {
+mutation deleteMilestone($componentId: ID!, $resultId: ID!, $milestoneId: ID!){
+  component(id: $componentId){
+    ... on AccountabilityMutation {
+      result(id: $resultId){
+        deleteMilestone(id: $milestoneId){
           id
-          state
-          withdrawnAt
         }
       }
     }
@@ -24,8 +24,9 @@ Example of submitted variables
 [source,json]
 ----
 {
-  "componentId": "9",
-  "proposalId": "2"
+  "componentId": "3",
+  "resultId": "5",
+  "milestoneId": "10"
 }
 ----
 
